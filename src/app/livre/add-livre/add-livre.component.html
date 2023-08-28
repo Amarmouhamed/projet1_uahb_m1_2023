@@ -1,0 +1,14 @@
+<form [formGroup]="mon_formulaire" (ngSubmit)="valider()">
+    <label for="">Titre</label>
+    <input type="text" formControlName="titre">
+    <br>
+    <label for="">Prix</label>
+    <input type="text" formControlName="prix">
+    <br>
+    <br>
+    <button type="submit">Enregistrer</button>
+</form>
+
+<pre>
+    {{mon_formulaire.dirty|json}}
+</pre>

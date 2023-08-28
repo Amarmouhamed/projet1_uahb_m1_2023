@@ -1,0 +1,14 @@
+<div [ngClass]="{'paire':compteur%2==0,'impaire':compteur%2!==0}">
+    {{compteur}}
+</div>
+
+<button (click)="inc()">+</button>
+<br>
+<button (click)="dec()">-</button>
+
+
+<ul>
+    <li *ngFor="let un_livre of les_livres">
+        {{un_livre.titre}}
+    </li>
+</ul>

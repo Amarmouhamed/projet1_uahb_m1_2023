@@ -1,0 +1,65 @@
+<div class="d-flex justify-content-between">
+
+    <h1 class="m-0">Mes livre</h1>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Ajouter
+    </button>
+</div>
+
+
+<div>
+
+
+    <div class="card" style="width: 18rem;" *ngFor="let un_livre of les_livres">
+        <img src="https://c8.alamy.com/compfr/ae2456/centre-ville-dakar-senegal-ae2456.jpg" class="card-img-top"
+            alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{un_livre.titre}}</h5>
+            <p class="card-text">{{un_livre.prix}}</p>
+            <!-- <a [routerLink]="['/livre/edit',un_livre.id_livre]" class="btn btn-primary">modifier</a> -->
+            <a data-bs-toggle="modal" data-bs-target="#modal_edit" class="btn btn-primary">modifier</a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter livre</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-add-livre></app-add-livre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal edit -->
+<div class="modal fade" id="modal_edit" tabindex="-1" aria-labelledby="modal_edit" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modal_edit">Modifier livre</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-edit-livre [id_livre]="29"></app-edit-livre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
